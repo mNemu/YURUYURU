@@ -57,7 +57,6 @@
 
         $(function () {
             $('form').submit(function () {
-                document.getElementById('IDToken').value = liff.getIDToken();
                 const name    = $('input[name="name"]').val();
                 const msg = `${name}\n${liff.isLoggedIn()}\n${JSON.stringify(liff.getDecodedIDToken())}\n${liff.getIDToken()}`;
                 
