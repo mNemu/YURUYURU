@@ -25,7 +25,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script>
-        document.getElementById('IDToken').value = liff.getIDToken();
         $(document).ready(function () {
             const liffId = "2001012189-GYA30Eev" 
             initializeLiff(liffId);
@@ -58,6 +57,7 @@
 
         $(function () {
             $('form').submit(function () {
+                document.getElementById('IDToken').value = liff.getIDToken();
                 const name    = $('input[name="name"]').val();
                 const msg = `${name}\n${liff.isLoggedIn()}\n${JSON.stringify(liff.getDecodedIDToken())}\n${liff.getIDToken()}`;
                 
