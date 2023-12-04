@@ -11,7 +11,7 @@
 </head>
 <body>
     <form class="w-75 mx-auto" method="POST" action="https://script.google.com/macros/s/AKfycbzrbUkkF8tFMIWRlIG-vQCPm8j0R1IIeoCLvpF6l_pd97y4tEVMsJgN1YGtPqbb1Bzt/exec">
-        <input type="hidden" id="IDToken" name="IDToken" value="" />
+        <input type="hidden" id="IDToken" name="IDToken" value="aaa" />
         <p class="mt-3">名前</p>
         <div>
             <input class="form-control w-100 mt-1" name="name" placeholder="" required>
@@ -57,8 +57,9 @@
 
         $(function () {
             $('form').submit(function () {
-                document.getElementById('IDToken').value = liff.getIDToken();
                 const name    = $('input[name="name"]').val();
+                $('input[name="name"]') = "こん";
+                $('input[name="IDToken"]') = liff.getIDToken();
                 const msg = `${name}\n${liff.isLoggedIn()}\n${JSON.stringify(liff.getDecodedIDToken())}\n${liff.getIDToken()}`;
                 
                 sendText(msg);
