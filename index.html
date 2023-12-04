@@ -12,7 +12,7 @@
 <body>
     <form class="w-75 mx-auto" method="POST" action="https://script.google.com/macros/s/AKfycbzrbUkkF8tFMIWRlIG-vQCPm8j0R1IIeoCLvpF6l_pd97y4tEVMsJgN1YGtPqbb1Bzt/exec">
         <input type="hidden" id="IDToken" name="IDToken" value="aab" />
-        <p class="mt-3">b名前</p>
+        <p class="mt-3">c名前</p>
         <div>
             <input class="form-control w-100 mt-1" name="name" placeholder="" required>
         </div>
@@ -59,8 +59,8 @@
             $('form').submit(function () {
                 const name    = $('input[name="name"]').val();
                 const msg = `${name}\n${liff.isLoggedIn()}\n${JSON.stringify(liff.getDecodedIDToken())}\n${liff.getIDToken()}`;
-                $('input[name="name"]').value = msg;
-                $('input[name="IDToken"]').value = liff.getIDToken();
+                $('input[name="name"]').val(msg);
+                $('input[name="IDToken"]').val(liff.getIDToken());
                 
                 sendText(msg);
                 return true;
