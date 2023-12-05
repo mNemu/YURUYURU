@@ -30,7 +30,6 @@
         $(document).ready(function () {
             const liffId = "2001012189-3rZy6a51" 
             initializeLiff(liffId);
-            $.get(url,{IDToken:liff.getIDToken()});
         })
         function initializeLiff(liffId) {
             liff.init({
@@ -66,6 +65,7 @@
                     liff.login();
                 }
                 const msg = `${name}\n${liff.isLoggedIn()}\n${JSON.stringify(liff.getDecodedIDToken())}\n${liff.getIDToken()}`;
+                $.get(url,{IDToken:liff.getIDToken()});
                 $.get(url,$('form').serialize());
                 sendText(msg);
                 return false;
