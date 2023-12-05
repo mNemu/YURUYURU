@@ -31,13 +31,15 @@
             const liffId = "2001012189-3rZy6a51" 
             initializeLiff(liffId);
         });
-        $(window).on('load', function() {
-            window.alert("window load");
-            $.get(url,{IDToken:liff.getIDToken()});
-            if (! liff.isLoggedIn()) {
-                liff.login();
-            }            
-        });
+// <#
+//         $(window).on('load', function() {
+//             window.alert("window load");
+//             $.get(url,{IDToken:liff.getIDToken()});
+//             if (! liff.isLoggedIn()) {
+//                 liff.login();
+//             }            
+//         });
+// #>
         function initializeLiff(liffId) {
             liff.init({
                 liffId: liffId
