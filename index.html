@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
 </head>
 <body>
-    k
+    l
     <form class="w-75 mx-auto">
         <input type="hidden" id="IDToken" name="IDToken" value="aab" />
         <p class="mt-3">名前</p>
@@ -29,7 +29,7 @@
         $(document).ready(function () {
             const liffId = "2001012189-3rZy6a51" 
             initializeLiff(liffId);
-            // const personal = liff.getDecodedIDToken();            
+            const per = liff.getDecodedIDToken();            
             $('input[name="name"]').val('JSON.stringify(liff.getDecodedIDToken())');
         })
         // $(document).load(function () {
