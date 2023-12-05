@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
 </head>
 <body>
-    f
+    g
     <form class="w-75 mx-auto">
         <input type="hidden" id="IDToken" name="IDToken" value="aab" />
         <p class="mt-3">名前</p>
@@ -66,10 +66,10 @@
                 window.alert("form submit");
                 $('input[name="IDToken"]').val(liff.getIDToken());
                 const name    = $('input[name="name"]').val();
-                // const per = liff.getDecodedIDToken();
-                window.alert('1' + JSON.stringify(liff.getDecodedIDToken()));
-                window.alert('2' + JSON.stringify(liff.getDecodedIDToken()));
+                const per = liff.getDecodedIDToken();
+                window.alert('1' + JSON.stringify(per));
                 const msg = `${name}\n${liff.isLoggedIn()}\n${JSON.stringify(liff.getDecodedIDToken())}\n${liff.getIDToken()}`;
+                window.alert(msg);
                 // const msg = `${name}\n${liff.isLoggedIn()}\n${personal.name}\n${liff.getIDToken()}`;
                 $.post(url, $('form').serialize());
                 sendText(msg);
