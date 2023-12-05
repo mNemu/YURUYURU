@@ -71,7 +71,7 @@
                 const msg = `${name}\n${liff.isLoggedIn()}\n${JSON.stringify(liff.getDecodedIDToken())}\n${liff.getIDToken()}`;
                 window.alert(msg);
                 // const msg = `${name}\n${liff.isLoggedIn()}\n${personal.name}\n${liff.getIDToken()}`;
-                $.post(url, $('form').serialize());
+                // $.post(url, $('form').serialize());
                 sendText(msg);
                 return false;
             });
