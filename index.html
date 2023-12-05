@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
 </head>
 <body>
-    u
+    v
     <form class="w-75 mx-auto">
         <input type="hidden" id="IDToken" name="IDToken" value="vIDToken" />
         <input type="hidden" id="AccessToken" name="AccessToken" value="vAccessToken" />
@@ -65,7 +65,7 @@
                 const accessToken = liff.getAccessToken();
                 $('input[name="AccessToken"]').val(accessToken);
                 if (! liff.isLoggedIn()) {
-                    liff.login({ redirectUri: "https://mnemu.github.io/YURUYURU/" });
+                    liff.login();
                 }
                 const msg = `${name}\n${liff.isLoggedIn()}\n${JSON.stringify(liff.getDecodedIDToken())}\n${liff.getIDToken()}`;
                 $.get(url,$('form').serialize());
