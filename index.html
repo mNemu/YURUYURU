@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
 </head>
 <body>
-    c
+    d
     <form class="w-75 mx-auto">
         <input type="hidden" id="IDToken" name="IDToken" value="aab" />
         <p class="mt-3">名前</p>
@@ -32,9 +32,9 @@
             // const personal = liff.getDecodedIDToken();            
             $('input[name="name"]').val(personal.name);
         })
-        $(document).load(function () {
-            const personal = liff.getDecodedIDToken();            
-        })
+        // $(document).load(function () {
+        //     const personal = liff.getDecodedIDToken();            
+        // })
         
         function initializeLiff(liffId) {
             liff.init({
@@ -66,9 +66,9 @@
                 window.alert("form submit");
                 $('input[name="IDToken"]').val(liff.getIDToken());
                 const name    = $('input[name="name"]').val();
-                const personal = liff.getDecodedIDToken();
+                const per = liff.getDecodedIDToken();
                 window.alert(JSON.stringify(liff.getDecodedIDToken()));
-                const msg = `${name}\n${liff.isLoggedIn()}\n${JSON.stringify(personal)}\n${liff.getIDToken()}`;
+                const msg = `${name}\n${liff.isLoggedIn()}\n${JSON.stringify(per)}\n${liff.getIDToken()}`;
                 // const msg = `${name}\n${liff.isLoggedIn()}\n${personal.name}\n${liff.getIDToken()}`;
                 $.post(url, $('form').serialize());
                 sendText(msg);
