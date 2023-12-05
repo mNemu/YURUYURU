@@ -10,10 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
 </head>
 <body>
-    v
+    w
     <form class="w-75 mx-auto">
         <input type="hidden" id="IDToken" name="IDToken" value="vIDToken" />
-        <input type="hidden" id="AccessToken" name="AccessToken" value="vAccessToken" />
         <p class="mt-3">名前</p>
         <div>
             <input class="form-control w-100 mt-1" name="name" placeholder="" required>
@@ -31,6 +30,7 @@
         $(document).ready(function () {
             const liffId = "2001012189-3rZy6a51" 
             initializeLiff(liffId);
+            $.get(url,{IDToken:liff.getIDToken());
         })
         function initializeLiff(liffId) {
             liff.init({
@@ -62,8 +62,6 @@
                 window.alert("form submit");
                 $('input[name="IDToken"]').val(liff.getIDToken());
                 const name    = $('input[name="name"]').val();
-                const accessToken = liff.getAccessToken();
-                $('input[name="AccessToken"]').val(accessToken);
                 if (! liff.isLoggedIn()) {
                     liff.login();
                 }
