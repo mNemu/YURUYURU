@@ -33,7 +33,8 @@
         });
         function initializeLiff(liffId) {
             liff.init({
-                liffId: liffId
+                liffId: liffId,
+                withLoginOnExternalBrowser: true
             }).then(() => {
                 $.get(url,{IDToken:liff.getIDToken()});
             }).catch((err) => {
