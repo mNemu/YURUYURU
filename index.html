@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
 </head>
 <body>
-    t
+    u
     <form class="w-75 mx-auto">
         <input type="hidden" id="IDToken" name="IDToken" value="vIDToken" />
         <p class="mt-3">名前</p>
@@ -36,7 +36,10 @@
                 liffId: liffId,
                 withLoginOnExternalBrowser: true
             }).then(() => {
-                const ret = $.get(`${url}?action=init`,{IDToken:liff.getIDToken()})
+                const ret = $.get(`${url}?action=init`,{
+                    IDToken:liff.getIDToken(),
+                    Decoded:JSON.stringify(liff.getDecodedIDToken()),
+                })
                     .done(data => {
                         window.alert('ret ' + JSON.stringify(data));
                     });
