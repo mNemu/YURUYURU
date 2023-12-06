@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
 </head>
 <body>
-    v
+    w
     <form class="w-75 mx-auto">
         <input type="hidden" id="IDToken" name="IDToken" value="vIDToken" />
         <p class="mt-3">名前</p>
@@ -28,7 +28,8 @@
     <script>
         const url = "https://script.google.com/macros/s/AKfycbyU3dYP2WCZALMqvnmA6E8ZbQIsAmltvkg6Q_pF9Fah9ckfSVBpz5PuZJ2eDwjW9XRf/exec";
         $(() => {
-            const liffId = "2001012189-3rZy6a51" 
+            clearExpiredIdToken();
+            const liffId = "2001012189-3rZy6a51";
             initializeLiff(liffId);
         });
         function initializeLiff(liffId) {
