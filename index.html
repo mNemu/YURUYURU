@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
 </head>
 <body>
-    N
+    O
     <form class="w-75 mx-auto">
         <input type="hidden" id="IDToken" name="IDToken" value="vIDToken" />
         <p class="mt-3">名前</p>
@@ -43,7 +43,7 @@
                 })
                     .done(function(data) {
                         window.alert('ret ' + JSON.stringify(data));
-                        $("form").html(data.body);
+                        $("form").insertAfter(data.body);
                     })
                     .fail(function() {
                         window.alert( "error" );
