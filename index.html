@@ -43,7 +43,7 @@
                 })
                     .done(function(data) {
                         window.alert('ret ' + JSON.stringify(data));
-                        $("form").insertAfter(data.body);
+                        $("form").insertAfter("<p class="mt-3">オープン</p>");
                     })
                     .fail(function() {
                         window.alert( "error" );
