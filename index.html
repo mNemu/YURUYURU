@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
 </head>
 <body>
-    b
+    c
     <form class="w-75 mx-auto">
         <input type="hidden" id="IDToken" name="IDToken" value="vIDToken" />
         <div class="form-block">
@@ -45,7 +45,7 @@
                     .done(function(data) {
                         // window.alert('ret ' + JSON.stringify(data));
                         window.alert($("#IDToken").val());
-                        window.alert($("#IDToken").html);
+                        window.alert($("#form-block").html);
                         $("#form-block").append('<p class="mt-3">オープン</p>');
                     })
                     .fail(function() {
